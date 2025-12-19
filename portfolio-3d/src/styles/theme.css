@@ -1,24 +1,22 @@
 :root {
-  /* Core Backgrounds */
-  --bg-main: #0a0506;
-  --bg-deep: #050203;
+  --bg-main: #050000;
+  --bg-soft: #0b0202;
 
-  /* Glass Layers */
-  --glass-bg: rgba(255, 60, 60, 0.06);
-  --glass-border: rgba(255, 80, 80, 0.14);
+  --accent: #b11212;      /* professional crimson */
+  --accent-soft: #ff4d4d;
 
-  /* Primary Accents */
-  --accent-primary: #b11226;
-  --accent-secondary: #ff4d6d;
+  --text-main: #f5eaea;
+  --text-muted: #c7a6a6;
+}
 
-  /* Highlight / Action */
-  --accent-glow: #ff1e3c;
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
 
-  /* Text */
-  --text-main: #f3eaea;
-  --text-muted: #b8a2a6;
-
-  /* Glow Effects */
-  --glow-primary: 0 0 45px rgba(255, 30, 60, 0.45);
-  --glow-soft: 0 0 25px rgba(177, 18, 38, 0.35);
+.hero {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
 }

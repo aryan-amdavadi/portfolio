@@ -1,18 +1,11 @@
-import Scene from "./canvas/Scene";
-import Hero from "./components/sections/hero";
+import Scene from "./components/Scene";
+import Hero from "./components/hero";
 
-
-
-function App() {
+export default function App() {
   return (
     <>
       <Scene />
       <Hero />
-      <div className="page">
-        <h1>My 3D Portfolio</h1>
-      </div>
     </>
   );
 }
-
-export default App;
