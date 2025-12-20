@@ -2,21 +2,23 @@
   --bg-main: #050000;
   --bg-soft: #0b0202;
 
-  --accent: #b11212;      /* professional crimson */
+  --accent: #b11212;
   --accent-soft: #ff4d4d;
 
   --text-main: #f5eaea;
   --text-muted: #c7a6a6;
 }
 
-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
+* {
+  box-sizing: border-box;
 }
 
-.hero {
-  position: fixed;
-  inset: 0;
-  z-index: 5;
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(80rem 40rem at 70% -10%, rgba(177,18,18,0.15), transparent),
+    linear-gradient(180deg, var(--bg-main), var(--bg-soft));
+  overflow: hidden;
 }

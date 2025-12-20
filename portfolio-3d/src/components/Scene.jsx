@@ -1,19 +1,30 @@
-<Canvas camera={{ position: [0, 1.2, 7], fov: 40 }}>
-  <fog attach="fog" args={["#050000", 6, 14]} />
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import LaptopModel from "./LaptopModel";
 
-  <ambientLight intensity={0.6} />
-  <directionalLight position={[5, 6, 5]} intensity={1.4} />
-  <pointLight position={[-4, 2, 3]} intensity={1} color="#ff4d4d" />
+export default function Scene() {
+  return (
+    <Canvas
+      camera={{ position: [0, 1.2, 7], fov: 40 }}
+      style={{ position: "fixed", inset: 0, zIndex: 1 }}
+    >
+      <fog attach="fog" args={["#050000", 6, 14]} />
 
-  {/* LEFT aligned laptop */}
-  <group position={[-2.2, -0.3, 0]}>
-    <LaptopModel />
-  </group>
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[5, 6, 5]} intensity={1.4} />
+      <pointLight position={[-4, 2, 3]} intensity={1} color="#ff4d4d" />
 
-  <OrbitControls
-    enableZoom={false}
-    enablePan={false}
-    autoRotate
-    autoRotateSpeed={0.45}
-  />
-</Canvas>
+      {/* LEFT aligned laptop */}
+      <group position={[-2.4, -0.3, 0]}>
+        <LaptopModel />
+      </group>
+
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        autoRotate
+        autoRotateSpeed={0.5}
+      />
+    </Canvas>
+  );
+}

@@ -9,7 +9,8 @@ export default function Hero() {
         </h1>
 
         <p className="subtitle">
-          Full-Stack Developer crafting immersive, performant web experiences.
+          Full-Stack Developer crafting clean, immersive and scalable web
+          experiences.
         </p>
 
         <div className="hero-buttons">
