@@ -1,30 +1,35 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import LaptopModel from "./LaptopModel";
+import { Suspense } from "react";
+import Laptop from "./Laptop";
 
-export default function Scene() {
+const Scene = () => {
   return (
-    <Canvas
-      camera={{ position: [0, 1.2, 7], fov: 40 }}
-      style={{ position: "fixed", inset: 0, zIndex: 1 }}
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        right: 0,
+        width: "55vw",
+        height: "100vh",
+        zIndex: 0,
+        pointerEvents: "none",
+      }}
     >
-      <fog attach="fog" args={["#050000", 6, 14]} />
+      <Canvas className="canvas" camera={{ fov: 35 }}>
+  <Camera />
 
-      <ambientLight intensity={0.6} />
-      <directionalLight position={[5, 6, 5]} intensity={1.4} />
-      <pointLight position={[-4, 2, 3]} intensity={1} color="#ff4d4d" />
+  <ambientLight intensity={1.5} />
+  <directionalLight position={[5, 5, 5]} intensity={2.5} />
 
-      {/* LEFT aligned laptop */}
-      <group position={[-2.4, -0.3, 0]}>
-        <LaptopModel />
-      </group>
+  <Suspense fallback={null}>
+    <Laptop />
+  </Suspense>
 
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        autoRotate
-        autoRotateSpeed={0.5}
-      />
-    </Canvas>
+  {/* REMOVE OrbitControls IN PRODUCTION */}
+</Canvas>
+
+    </div>
   );
-}
+};
+
+export default Scene;

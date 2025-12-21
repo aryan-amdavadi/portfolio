@@ -1,22 +1,29 @@
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+import { Suspense } from "react";
+import { OrbitControls } from "@react-three/drei";
 import Camera from "./Camera";
-import Lights from "./Lights";
-import Models from "./Models";
+import Laptop from "./Laptop";
 
-export default function Scene() {
+const Scene = () => {
   return (
-    <Canvas
-      camera={{ position: [0, 1, 6], fov: 45 }}
-    >
+    <Canvas className="canvas">
       <Camera />
-      <Lights />
-      <Models />
-      <ambientLight intensity={1} />
-      <directionalLight position={[3, 3, 3]} intensity={2} />
-      <pointLight position={[0, 2, 2]} intensity={1.5} />
 
-      <Environment preset="city" />
+      <ambientLight intensity={2} />
+      <directionalLight position={[10, 10, 10]} intensity={3} />
+
+      <Suspense fallback={null}>
+        <Laptop />
+      </Suspense>
+
+      {/* MUST be ON for debugging */}
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        maxPolarAngle={Math.PI / 2}
+      />
     </Canvas>
   );
-}
+};
+
+export default Scene;

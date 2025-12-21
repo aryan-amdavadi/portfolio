@@ -1,11 +1,7 @@
-import Scene from "./components/Scene";
-import Hero from "./components/Hero";
+import Hero from "./components/sections/Hero";
 
-export default function App() {
-  return (
-    <>
-      <Scene />
-      <Hero />
-    </>
-  );
+function App() {
+  return <Hero />;
 }
+
+export default App;

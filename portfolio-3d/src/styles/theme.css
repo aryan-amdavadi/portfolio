@@ -1,24 +1,24 @@
 :root {
-  --bg-main: #050000;
-  --bg-soft: #0b0202;
+  /* Core Backgrounds */
+  --bg-main: #0a0506;
+  --bg-deep: #050203;
 
-  --accent: #b11212;
-  --accent-soft: #ff4d4d;
+  /* Glass Layers */
+  --glass-bg: rgba(255, 60, 60, 0.06);
+  --glass-border: rgba(255, 80, 80, 0.14);
 
-  --text-main: #f5eaea;
-  --text-muted: #c7a6a6;
-}
+  /* Primary Accents */
+  --accent-primary: #b11226;
+  --accent-secondary: #ff4d6d;
 
-* {
-  box-sizing: border-box;
-}
+  /* Highlight / Action */
+  --accent-glow: #ff1e3c;
 
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
-  color: var(--text-main);
-  background:
-    radial-gradient(80rem 40rem at 70% -10%, rgba(177,18,18,0.15), transparent),
-    linear-gradient(180deg, var(--bg-main), var(--bg-soft));
-  overflow: hidden;
+  /* Text */
+  --text-main: #f3eaea;
+  --text-muted: #b8a2a6;
+
+  /* Glow Effects */
+  --glow-primary: 0 0 45px rgba(255, 30, 60, 0.45);
+  --glow-soft: 0 0 25px rgba(177, 18, 38, 0.35);
 }

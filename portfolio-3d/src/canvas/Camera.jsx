@@ -1,14 +1,15 @@
-import { useFrame, useThree } from "@react-three/fiber";
-import useScroll from "../hooks/useScroll";
+import { useThree } from "@react-three/fiber";
+import { useEffect } from "react";
 
-export default function Camera() {
+const Camera = () => {
   const { camera } = useThree();
-  const scroll = useScroll();
 
-  useFrame(() => {
-    camera.position.z = 6 + scroll * 2;
-    camera.position.y = scroll * -1;
-  });
+  useEffect(() => {
+    camera.position.set(4, 1.5, 6);
+    camera.lookAt(0, 0, 0);
+  }, []);
 
   return null;
-}
+};
+
+export default Camera;
