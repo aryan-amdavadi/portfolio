@@ -1,110 +1,33 @@
 .hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  background: radial-gradient(
-    circle at top left,
-    #14142b,
-    #05050a
-  );
-  overflow: hidden;
-}
-
-
-
-/* LEFT PANEL */
-.hero-left {
-  position: relative;
-  z-index: 2;              /* 🟢 top layer */
-
-  width: 45%;
-  margin-left: 6vw;
-  margin-top: 25vh;
-  padding: 4rem 5rem;
-
-  color: white;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border-radius: 28px;
-  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
-}
-
-
-
-.hero-left h1 {
-  font-size: clamp(3.5rem, 5vw, 5.2rem);
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-.hero-left h1 span {
-  background: linear-gradient(90deg, #6cf2ff, #8a7cff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-left p {
-  margin-top: 1.6rem;
-  font-size: 1.4rem;
-  opacity: 0.85;
-}
-
-/* RIGHT PANEL */
-.hero-right {
-  position: absolute;
-  inset: 0;
-
-  z-index: 1;              /* 🟢 middle layer */
-  pointer-events: none;
-}
-
-
-.hero-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 45% 55%;
-  overflow: hidden;
-}
-
-/* LEFT SIDE */
-.hero-left {
-  z-index: 5;
   display: flex;
   align-items: center;
-  padding-left: 6rem;
+  padding-left: 6vw;
 }
 
-/* HERO CARD */
 .hero-card {
-  max-width: 480px;
-  padding: 2.8rem;
-  backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(18, 20, 35, 0.75);
+  backdrop-filter: blur(18px);
+  padding: 48px;
+  border-radius: 24px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  color: white;
 }
 
-/* RIGHT SIDE (3D AREA) */
-.hero-right {
-  position: relative;
-  height: 100%;
+.hero h1 {
+  font-size: 3.2rem;
+  margin: 0;
+  color: white;
 }
 
-/* CANVAS */
-.canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+.hero h1 span {
+  background: linear-gradient(90deg, #6ae3ff, #7c7cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Prevent hero blocking interaction */
-.hero-left {
-  pointer-events: auto;
-}
-.hero-right {
-  pointer-events: none;
+.hero p {
+  margin-top: 16px;
+  color: #bfc4ff;
+  line-height: 1.6;
 }

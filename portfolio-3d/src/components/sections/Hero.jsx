@@ -1,25 +1,21 @@
 import Scene from "../../canvas/Scene";
-import "../../styles/Hero.css";
+import "../../styles/hero.css";
+import "../../styles/globals.css";
 
 const Hero = () => {
   return (
-    <section className="hero">
-      {/* 3D Canvas Layer */}
+    <section className="hero-section">
       <div className="hero-left">
         <h1>
           Hi, I’m <span>Aryan</span>
         </h1>
-        <p>
-          Full-Stack Developer <br />
-          React • 3D Web • UI Engineering
-        </p>
+        <p className="role">Full-Stack Developer</p>
+        <p className="stack">React · 3D Web · UI Engineering</p>
       </div>
+
       <div className="hero-right">
         <Scene />
       </div>
-
-      {/* Text Layer */}
-      
     </section>
   );
 };

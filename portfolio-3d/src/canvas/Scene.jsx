@@ -1,27 +1,25 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
-import Camera from "./Camera";
 import Laptop from "./Laptop";
 
 const Scene = () => {
   return (
-    <Canvas className="canvas">
-      <Camera />
-
-      <ambientLight intensity={2} />
-      <directionalLight position={[10, 10, 10]} intensity={3} />
+    <Canvas
+      className="canvas"
+      style={{ width: "100%", height: "100%" }}
+      camera={{ position: [0, 1.4, 5], fov: 32 }}
+    >
+      <ambientLight intensity={1.4} />
+      <directionalLight position={[5, 5, 5]} intensity={2.5} />
 
       <Suspense fallback={null}>
-        <Laptop />
+        <Laptop scale={2.2} position={[-0.5, -0.8, 0]} />
+
+
       </Suspense>
 
-      {/* MUST be ON for debugging */}
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        maxPolarAngle={Math.PI / 2}
-      />
+      <OrbitControls enableZoom={false} />
     </Canvas>
   );
 };
